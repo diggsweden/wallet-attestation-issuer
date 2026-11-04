@@ -95,45 +95,6 @@ paths:
             application/problem+json:
               schema:
                 $ref: '#/components/schemas/ProblemResponse'
-  /wallet-unit-attestation:
-    post:
-      deprecated: true
-      tags:
-        - Wallet Unit Attestation
-      summary: Create Wallet Unit Attestation
-      description: Creates a Wallet Unit Attestation (WUA) required for the wallet instance to interact with the ecosystem.
-      operationId: postWalletUnitAttestation
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WalletUnitAttestationRequest'
-      responses:
-        "200":
-          description: Successfully created Wallet Unit Attestation
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/WalletUnitAttestationResponse'
-        "400":
-          description: Bad Request
-          content:
-            application/problem+json:
-              schema:
-                $ref: '#/components/schemas/ProblemResponse'
-        "500":
-          description: Internal Server Error
-          content:
-            application/problem+json:
-              schema:
-                $ref: '#/components/schemas/ProblemResponse'
-        default:
-          description: Unexpected error
-          content:
-            application/problem+json:
-              schema:
-                $ref: '#/components/schemas/ProblemResponse'
   /api-info:
     get:
       tags:
@@ -293,7 +254,7 @@ components:
           description: |
             A URI reference that identifies the specific occurrence of the problem.
             Typically the request path or request URI.
-          example: /wallet-unit-attestation
+          example: /v0/wallet-instance-attestations
         transaction-id:
           type: string
           description: A unique request identifier that can be used for debugging or troubleshooting.
