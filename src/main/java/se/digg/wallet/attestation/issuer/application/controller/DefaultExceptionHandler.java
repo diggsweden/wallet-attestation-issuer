@@ -35,7 +35,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import se.digg.wallet.attestation.issuer.api.v0.model.ProblemResponseDto;
 import se.digg.wallet.attestation.issuer.domain.exception.InvalidKeyAttestationRequestParameterException;
 import se.digg.wallet.attestation.issuer.domain.exception.InvalidWiaRequestParameterException;
-import se.digg.wallet.attestation.issuer.domain.exception.InvalidWuaRequestParameterException;
 import se.digg.wallet.attestation.issuer.domain.exception.WalletRuntimeException;
 
 
@@ -150,7 +149,6 @@ public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
    * Indicates that a client supplied an invalid parameter when creating an attestation.
    */
   @ExceptionHandler({
-      InvalidWuaRequestParameterException.class,
       InvalidWiaRequestParameterException.class,
       InvalidKeyAttestationRequestParameterException.class
   })

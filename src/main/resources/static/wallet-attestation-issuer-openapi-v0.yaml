@@ -34,8 +34,6 @@ tags:
     description: Operations related to Wallet Instance Attestation (WIA)
   - name: Key Attestation
     description: Operations related to Key Attestation (KA)
-  - name: Wallet Unit Attestation
-    description: Operations related to Wallet Unit Attestation (WUA)
   - name: API Info
     description: Information about the API
 paths:
@@ -191,25 +189,6 @@ components:
         key_attestation:
           type: string
           description: The signed Key Attestation as a compact JWT string.
-
-    WalletUnitAttestationRequest:
-      type: object
-      required:
-        - jwk
-      properties:
-        jwk:
-          type: string
-          description: A JSON Web Key representing the public key of the Wallet Instance.
-        nonce:
-          type: string
-          description: Optional nonce to prevent replay attacks.
-      example:
-        jwk: '{"kty":"EC","crv":"P-256","x":"...","y":"..."}'
-        nonce: "1234567890"
-
-    WalletUnitAttestationResponse:
-      type: string
-      description: The signed Wallet Unit Attestation as a JWT string
 
     ApiInfo:
       type: object
