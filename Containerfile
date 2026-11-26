@@ -32,8 +32,8 @@ RUN ./mvnw clean package -DskipTests -Dcheckstyle.skip -Dformatter.skip -B && \
 # Ensure we have a consistent name to use as an entrypoint argument
 RUN mv /app/target/layers/application/*.jar /app/target/layers/application/application.jar
 
-# Stage 2: Runtime stage
-FROM cgr.dev/chainguard/jre:latest@sha256:df582a702538248c0f07138a35975752cc16cf393901bc730f39e2478bada19c AS runtime
+# Stage 2: Runtime stage (OpenJDK 27.0.1.1)
+FROM cgr.dev/chainguard/jre:latest@sha256:62bbb45ac3a4753d20746d4e6de33bb4f0a7d804b768f1c161dde72dc2316567 AS runtime
 
 LABEL maintainer="Digg - Agency for Digital Government"
 LABEL description="Wallet Attestation Issuer"
